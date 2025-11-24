@@ -1,0 +1,126 @@
+IEEE Fraud Dataset – Sade ve Net Özet
+
+Bu veri seti, gerçek bir ödeme sağlayıcısı + banka fraud tespit sistemi tarafından toplanmış alım-satım işlemlerini içeriyor.
+
+İki tablo var:
+
+1) Transaction Table (işlem bilgileri)
+
+Her satır = 1 işlem.
+
+🔹 TransactionDT
+
+Gerçek zaman değil → referans tarihten itibaren geçen saniye.
+Bu yüzden zaman serisi analizi yapılabilir.
+
+🔹 TransactionAMT
+
+İşlem miktarı.
+Bazı değerlerin 3 ondalıklı olması → "yabancı para çevirisi" olabileceğine işaret.
+
+🔹 ProductCD
+
+Ürün/servis tipi → internette satın alınan şeyler, hizmet ödemeleri vb.
+
+🔹 card1–6
+
+Kart tipi, kart kategorisi, banka gibi bilgiler (maskeli).
+
+🔹 addr1 / addr2
+
+addr1 = fatura bölgesi
+
+addr2 = fatura ülkesi
+
+🔹 dist1 / dist2
+
+IP – adres – cihaz konumu vb. arasındaki mesafe tahmini.
+
+🔹 P_emaildomain / R_emaildomain
+
+P = alıcı
+
+R = gönderilen kişi (hediye, başkası için alınmış ürün)
+
+🔹 C1–C14 (Counts)
+
+Sayma değişkenleri. Maskeli. Örnek mantık:
+
+Bu kartla kaç farklı IP görüldü?
+
+Bu e-mail ile kaç adres eşleşti?
+
+Bu cihaz kaç farklı hesapta kullanıldı?
+
+🔹 D1–D15 (Time delta)
+
+Zaman farkları. Örneğin:
+
+Bu işlemin, aynı kartın önceki işlemi ile arasındaki gün farkı.
+
+Bu cihaza son girişten bu yana geçen süre.
+
+🔹 M1–M9 (Match Flags)
+
+Eşleşme bilgisi:
+
+Adres, kart, cihaz, telefon, e-mail uyuyor mu?
+
+True/False türü.
+
+🔹 Vxxx (Vesta engineered features)
+
+800+ tane özellik.
+Tamamen fraud tespit sistemi tarafından çıkarılmış, çok zengin türetilmiş özellikler.
+
+Örneğin:
+
+24 saat içinde aynı IP'de kaç işlem oldu?
+
+Bu kart + bu cihaz kombinasyonu daha önce kaç kez görüldü?
+
+Bu e-mail alanı her zaman bu kart ile eşleşiyor mu?
+
+2) Identity Table
+
+Bu tablo, işlemin yapıldığı cihaz ve ağ bilgileri:
+
+Örnek:
+
+IP adres türü
+
+Proxy olup olmadığı
+
+ISP (internet sağlayıcı)
+
+Cihaz modeli
+
+Tarayıcı versiyonu
+
+Oturum davranışı
+
+Güvenlik skoru (id01–id11)
+
+Burası tamamen device fingerprinting mantığıdır.
+
+🟥 Fraud Labeling Logic
+
+Bu kısım en önemli yer:
+
+Fraud = 1 şu durumlarda:
+
+Kart sahibinin resmi olarak chargeback (itiraz) açtığı işlemler
+
+Bu fraud işlemle bağlantılı:
+
+aynı kullanıcı
+
+aynı e-mail
+
+aynı fatura adresi
+ile ilişkili tüm sonraki işlemler
+
+Fraud = 0:
+120 gün boyunca hiçbir fraud raporu yoksa.
+
+Not: Gerçek hayatta tespit edilmemiş fraud olabilir → bunlar yanlışlıkla "0" etiketlenir.
