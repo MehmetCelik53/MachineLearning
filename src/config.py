@@ -5,7 +5,8 @@ from pathlib import Path
 
 # Paths
 BASE_DIR = Path(__file__).parent.parent
-MODEL_PATH = BASE_DIR / "models" / "model_full_features.pkl"
+MODEL_PATH = BASE_DIR / "models" / "pipeline" / "lgb_pipeline.pkl"
+PIPELINE_METADATA_PATH = BASE_DIR / "models" / "pipeline" / "pipeline_metadata.json"
 FREQUENCY_MAPS_PATH = BASE_DIR / "models" / "fraud_detection" / "frequency_maps.json"
 
 # Model settings

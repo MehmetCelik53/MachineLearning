@@ -79,13 +79,14 @@ def main():
     with st.sidebar:
         st.header("ℹ️ Hakkında")
         st.markdown("""
-        Bu uygulama **LightGBM** modeli kullanarak 
+        Bu uygulama **LightGBM Pipeline** modeli kullanarak 
         gerçek zamanlı dolandırıcılık tespiti yapar.
         
-        **Model Performansı:**
-        - 🎯 Validation AUC: 0.9395
-        - 📊 809 özellik (Full Model)
-        - ⚡ Hızlı inference
+        **Model Performansı (07_MLPipeline):**
+        - 🎯 Validation AUC: 0.8842
+        - 📊 34 özellik (SHAP + Native selection)
+        - ⚡ Optuna optimize parametreler
+        - 🔬 Feature Engineering: 16 → 34 özellik
         
         **Nasıl Çalışır:**
         1. İşlem bilgilerini girin
