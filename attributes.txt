@@ -16,7 +16,7 @@ Bu yüzden zaman serisi analizi yapılabilir.
 🔹 TransactionAMT
 
 İşlem miktarı.
-Bazı değerlerin 3 ondalıklı olması → "yabancı para çevirisi" olabileceğine işaret.
+Bazı değerlerin 3 ondalıklı olması → “yabancı para çevirisi” olabileceğine işaret.
 
 🔹 ProductCD
 
@@ -75,7 +75,7 @@ Tamamen fraud tespit sistemi tarafından çıkarılmış, çok zengin türetilmi
 
 Örneğin:
 
-24 saat içinde aynı IP'de kaç işlem oldu?
+24 saat içinde aynı IP’de kaç işlem oldu?
 
 Bu kart + bu cihaz kombinasyonu daha önce kaç kez görüldü?
 
@@ -123,4 +123,4 @@ ile ilişkili tüm sonraki işlemler
 Fraud = 0:
 120 gün boyunca hiçbir fraud raporu yoksa.
 
-Not: Gerçek hayatta tespit edilmemiş fraud olabilir → bunlar yanlışlıkla "0" etiketlenir.
+Not: Gerçek hayatta tespit edilmemiş fraud olabilir → bunlar yanlışlıkla “0” etiketlenir.
