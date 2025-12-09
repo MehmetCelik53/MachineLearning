@@ -1,0 +1,143 @@
+# ============================================
+# Fraud Detection ML Project - .gitignore
+# ============================================
+
+# ============================================
+# DATA FILES (Large files, sensitive data)
+# ============================================
+data/
+*.csv
+*.pkl
+*.pickle
+*.parquet
+*.h5
+*.hdf5
+
+# ============================================
+# MODEL FILES (Large trained models)
+# ============================================
+models/*.pkl
+models/*.pickle
+models/*.joblib
+models/*.h5
+models/fraud_detection/*.pkl
+models/fraud_detection/optimized/*.pkl
+models/fraud_detection/pipeline/*.pkl
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+temp_*.json
+temp_*.txt
+temp_*.csv
+
+# ============================================
+# PYTHON CACHE & COMPILED FILES
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ============================================
+# JUPYTER NOTEBOOK
+# ============================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# ============================================
+# MLFLOW & EXPERIMENT TRACKING
+# ============================================
+mlruns/
+mlflow.db
+mlartifacts/
+
+# ============================================
+# CATBOOST
+# ============================================
+catboost_info/
+
+# ============================================
+# VIRTUAL ENVIRONMENTS
+# ============================================
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# ============================================
+# IDE & EDITOR FILES
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ============================================
+# OS GENERATED FILES
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================
+# LOGS & DEBUG
+# ============================================
+*.log
+logs/
+*.out
+
+# ============================================
+# SECRETS & CREDENTIALS
+# ============================================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets.yaml
+credentials.json
+
+# ============================================
+# STREAMLIT
+# ============================================
+.streamlit/secrets.toml
+
+# ============================================
+# DUPLICATE PROJECT FOLDER (if exists)
+# ============================================
+FraudDetection/
+
+# ============================================
+# SPECIFIC FILES TO EXCLUDE
+# ============================================
+upload_to_github.py
+prepare_upload.py
+generate_freq_maps.py
